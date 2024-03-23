@@ -4,16 +4,6 @@ const bcrypt =require('bcrypt');
 
 const SALT_ROUNDS = 6;
 
-const noteSchema = new Schema ({
-    text: { type: String, required: true },
-    user: {
-        type: Schema.Types.ObjectId,
-        ref: 'user',
-        required: true,
-      },
-}, {
-    timestamps: true
-});
 
 
 const userSchema = new Schema ({
@@ -31,7 +21,7 @@ const userSchema = new Schema ({
     minLength: 3,
     require: true
    },
-   notes: [noteSchema]
+   
 }, {
     timestamps: true,
     // toJSON option is used to transform the document when its serialized to JSON
